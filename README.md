@@ -28,21 +28,21 @@ A scalar value between **0** and **1**.
 
 Subject clarity is decomposed into three independent dimensions. Each is evaluated by a dedicated sub-function that receives the same photograph and returns its own scalar score. The final output is the weighted average of all three.
 
-### 1. Focus Distinction — [{{ .Task0 }}](https://github.com/{{ .Owner }}/{{ .Task0 }})
+### 1. Focus Distinction — [cat-subject-focus](https://github.com/ObjectiveAI-claude-code-1/cat-subject-focus)
 
 Evaluates whether the cat is rendered with perceptual sharpness relative to the rest of the image. A cat in sharp focus against a soft background creates a visual hierarchy that pulls the viewer's eye directly to it. A cat that is equally sharp as — or softer than — its surroundings becomes just another element in the scene. This sub-function also considers the cat's internal clarity: whether its features (eyes, fur, ears) are defined enough to be immediately recognizable, rather than lost to motion blur or softness.
 
 **Scores high** when the cat is the sharpest element in the image and its features are clearly defined.
 **Scores low** when the cat is out of focus, motion-blurred, or no sharper than its surroundings.
 
-### 2. Frame Presence — [{{ .Task1 }}](https://github.com/{{ .Owner }}/{{ .Task1 }})
+### 2. Frame Presence — [cat-visual-dominance](https://github.com/ObjectiveAI-claude-code-1/cat-visual-dominance)
 
 Evaluates whether the cat occupies enough of the image to register as the dominant visual element. A cat that fills a generous portion of the frame announces itself; a cat that is a small shape in a vast scene does not. This sub-function considers both the cat's size relative to the frame and its visual weight relative to the background — a moderately sized cat against a clean, uncluttered background can command the image, while the same cat in a visually dense environment may feel diminished.
 
 **Scores high** when the cat occupies a commanding portion of the frame or dominates a clean composition.
 **Scores low** when the cat is tiny, distant, or lost within a visually busy scene.
 
-### 3. Visual Isolation — [{{ .Task2 }}](https://github.com/{{ .Owner }}/{{ .Task2 }})
+### 3. Visual Isolation — [cat-subject-isolation](https://github.com/ObjectiveAI-claude-code-1/cat-subject-isolation)
 
 Evaluates whether the cat is visually separable from its background and from competing elements in the frame. A cat that contrasts against its surroundings by color, tone, or brightness is easy to perceive as a distinct subject. A cat that blends into a similarly colored or textured background loses its visual identity. This sub-function also accounts for competing subjects — other animals, people, or prominent objects that divide the viewer's attention and weaken the cat's claim as subject.
 

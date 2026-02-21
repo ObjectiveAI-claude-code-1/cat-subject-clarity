@@ -1,16 +1,11 @@
 {
   "type": "scalar.function",
-  "input_schema": {
-    "type": "image",
-    "description": "A cat photograph to evaluate for subject clarity — whether the cat is in focus, visually distinct, and immediately recognizable as the center of the image."
-  },
   "tasks": [
     {
-      "type": "placeholder.scalar.function",
-      "input_schema": {
-        "type": "image",
-        "description": "A cat photograph to evaluate for focus distinction — whether the cat is rendered with perceptual sharpness relative to the rest of the image and whether its features are internally clear and recognizable."
-      },
+      "type": "scalar.function",
+      "owner": "ObjectiveAI-claude-code-1",
+      "repository": "cat-subject-focus",
+      "commit": "cdda30c81a4a248af92a5ce67c5edcde89af2abb",
       "skip": null,
       "input": {
         "$jmespath": "input"
@@ -20,11 +15,10 @@
       }
     },
     {
-      "type": "placeholder.scalar.function",
-      "input_schema": {
-        "type": "image",
-        "description": "A cat photograph to evaluate for frame presence — whether the cat occupies enough of the image to register as the dominant visual element rather than an incidental detail."
-      },
+      "type": "scalar.function",
+      "owner": "ObjectiveAI-claude-code-1",
+      "repository": "cat-visual-dominance",
+      "commit": "3f7cba51b19d1d4fbbaa3f2483b8b96fe74b33d6",
       "skip": null,
       "input": {
         "$jmespath": "input"
@@ -34,11 +28,10 @@
       }
     },
     {
-      "type": "placeholder.scalar.function",
-      "input_schema": {
-        "type": "image",
-        "description": "A cat photograph to evaluate for visual isolation — whether the cat is visually separable from its background and free from competing elements that might divide the viewer's attention."
-      },
+      "type": "scalar.function",
+      "owner": "ObjectiveAI-claude-code-1",
+      "repository": "cat-subject-isolation",
+      "commit": "634be71c3843f963b7c460575590f8782574ec94",
       "skip": null,
       "input": {
         "$jmespath": "input"
@@ -48,5 +41,9 @@
       }
     }
   ],
-  "description": "Scores how clearly a cat serves as the subject of a photograph by evaluating three dimensions: focus distinction, frame presence, and visual isolation. A high score means the cat commands the image at first glance; a low score means the viewer must search to find it. Perceptual clarity is prioritized over technical quality."
+  "description": "Scores how clearly a cat serves as the subject of a photograph by evaluating three dimensions: focus distinction, frame presence, and visual isolation. A high score means the cat commands the image at first glance; a low score means the viewer must search to find it. Perceptual clarity is prioritized over technical quality.",
+  "input_schema": {
+    "type": "image",
+    "description": "A cat photograph to evaluate for subject clarity — whether the cat is in focus, visually distinct, and immediately recognizable as the center of the image."
+  }
 }
