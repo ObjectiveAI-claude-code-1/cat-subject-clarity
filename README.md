@@ -29,21 +29,21 @@ The final score is a weighted aggregation of three independent sub-function eval
 
 Subject clarity is not a single property. It emerges from three independent qualities, each addressing a different way a cat can be lost in its own photograph.
 
-### 1. Focus Distinction — [{{ .Task0 }}](https://github.com/{{ .Owner }}/{{ .Task0 }})
+### 1. Focus Distinction — [cat-depth-separation](https://github.com/ObjectiveAI-claude-code-1/cat-depth-separation)
 
 Scores how sharply the cat is rendered **relative to everything else** in the frame. What matters is the gap in clarity between the cat and its surroundings — not absolute sharpness.
 
 - **Scores high** when the cat is the sharpest element in the frame and the background falls into softness, creating a natural depth-of-field hierarchy that draws the eye.
 - **Scores low** when the cat is out of focus, when focus is locked on a non-cat element, or when uniform sharpness across the entire image leaves the cat with no focus-based advantage.
 
-### 2. Subject Prominence — [{{ .Task1 }}](https://github.com/{{ .Owner }}/{{ .Task1 }})
+### 2. Subject Prominence — [cat-prominence-in-frame](https://github.com/ObjectiveAI-claude-code-1/cat-prominence-in-frame)
 
 Scores how much the cat occupies and commands the physical space of the frame. This evaluates size, position, and visual weight — whether the cat feels like the reason the photograph was taken.
 
 - **Scores high** when the cat is large in the frame, positioned at a natural focal point, and feels like the gravitational center of the composition.
 - **Scores low** when the cat is tiny, distant, cropped awkwardly, pushed to an extreme edge, or dwarfed by the scale of its surroundings.
 
-### 3. Visual Separation — [{{ .Task2 }}](https://github.com/{{ .Owner }}/{{ .Task2 }})
+### 3. Visual Separation — [{{ .Task2 }}](https://github.com/ObjectiveAI-claude-code-1/{{ .Task2 }})
 
 Scores how well the cat stands apart from its background and from competing visual elements. This has two dimensions: contrast against the environment, and absence of visual competition.
 
