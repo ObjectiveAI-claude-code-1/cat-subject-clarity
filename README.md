@@ -19,19 +19,19 @@ A **scalar score between 0 and 1**.
 
 Subject clarity is not a single property. It emerges from three distinct perceptual qualities, each evaluated by a dedicated sub-function:
 
-### 1. Focus Dominance — [{{ .Task0 }}](https://github.com/{{ .Owner }}/{{ .Task0 }})
+### 1. Focus Dominance — [cat-focus-dominance](https://github.com/ObjectiveAI-claude-code-1/cat-focus-dominance)
 
 Scores whether the cat is the sharpest and most crisply rendered element in the image relative to its surroundings. A cat in clear focus against a softer background draws the eye naturally. A cat that is blurry, soft, or no sharper than everything else loses its focal authority.
 
 This evaluation measures *relative* focus, not absolute sharpness. A slightly soft image where the cat still holds the focal advantage scores higher than a uniformly sharp image where the cat enjoys no such advantage. What matters is whether the optics of the photograph direct the viewer's attention toward the cat.
 
-### 2. Subject Prominence — [{{ .Task1 }}](https://github.com/{{ .Owner }}/{{ .Task1 }})
+### 2. Subject Prominence — [cat-compositional-prominence](https://github.com/ObjectiveAI-claude-code-1/cat-compositional-prominence)
 
 Scores whether the cat occupies enough of the frame, with sufficient size and intentional placement, to register immediately as the subject. A cat that fills a commanding portion of the frame reads as the reason the photograph was taken. A cat that is tiny, marginal, or dwarfed by its environment reads as incidental.
 
 This evaluation considers the cat's size relative to the frame, its compositional placement, and whether the spatial relationship between the cat and the borders of the image communicates intentionality.
 
-### 3. Visual Separation — [{{ .Task2 }}](https://github.com/{{ .Owner }}/{{ .Task2 }})
+### 3. Visual Separation — [cat-visual-separation](https://github.com/ObjectiveAI-claude-code-1/cat-visual-separation)
 
 Scores whether the cat is visually distinct from the background and free from competing elements. A gray cat on a gray couch becomes texture. A tabby on a patterned rug becomes camouflage. A black cat in a dark room becomes a shadow. This evaluation measures how well the cat stands apart through contrast in color, tone, texture, and spatial boundaries.
 
