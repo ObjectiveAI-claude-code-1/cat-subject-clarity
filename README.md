@@ -1,52 +1,77 @@
 # cat-subject-clarity
 
-Evaluates how clearly a cat serves as the undeniable subject of a photograph. Scores three dimensions of perceptual clarity — focus dominance, subject prominence, and visual separation — to determine whether the cat commands the image at first glance without requiring the viewer to search or squint.
+Scores how well a cat serves as the clear, undeniable subject of a photograph. Evaluates three dimensions — focus clarity, subject prominence, and visual separation — to determine whether the cat commands the image instantly or is lost to blur, small size, camouflage, or competing elements. Returns a scalar between 0 and 1.
+
+## Purpose
+
+Not all photographs that contain cats are photographs *of* cats. A cat may appear in the distant background of a landscape, curl into a dark corner of a cluttered room, or share the frame with a dozen other animals. In each case, a cat is technically present — but the photograph does not belong to it.
+
+`cat-subject-clarity` draws the line. It answers one question: **Does the cat own this image?**
+
+This is not a judgment of photographic merit, artistic composition, or technical quality. It is a perceptual evaluation — an attempt to replicate the instant, instinctive impression a human viewer forms in the first fraction of a second: *Is the cat plainly, unmistakably there?*
 
 ## Input
 
-The function accepts a single **image** input: a photograph presumed to contain a cat.
+| Field | Type | Description |
+|-------|------|-------------|
+| *(root)* | `image` | A cat photograph to evaluate for subject clarity — whether the cat is in focus, visually distinct, and immediately recognizable as the center of the image. |
 
-The function does not detect whether a cat is present. It evaluates how clearly and confidently the cat presents itself as the subject of the image. The photograph may be of any resolution, aspect ratio, or photographic style — what matters is whether the cat is perceptually dominant within it.
+The function accepts a single image from any source: a professional portrait, a phone snapshot, a video frame, or a social media upload. The photograph may vary in resolution, lighting, color palette, and environment. What matters is not the technical properties of the image, but how clearly the cat asserts itself as the subject within it.
 
 ## Output
 
-A **scalar score between 0 and 1**.
+A scalar score between **0** and **1**.
 
-- A score near **1** means the cat plainly, unmistakably commands the photograph. It is the first thing the viewer notices and there is no ambiguity about what the image depicts.
-- A score near **0** means the cat is diminished, hidden, camouflaged, or competing with other elements. The viewer must work to find or identify the cat within the frame.
+| Score Range | Interpretation |
+|-------------|----------------|
+| **0.8 – 1.0** | The cat is plainly, unmistakably the subject. Sharp, prominent, and visually dominant — the cat commands the photograph instantly. |
+| **0.5 – 0.8** | The cat is recognizable as the subject but with some weakness — mild softness, moderate size, or partial visual competition from other elements. |
+| **0.2 – 0.5** | The cat is present but struggles to assert itself. It may be small, partially blurred, blending into the background, or sharing attention with competing elements. |
+| **0.0 – 0.2** | The cat is nearly lost. It may be a tiny speck in the frame, severely out of focus, camouflaged against the background, or completely overshadowed by other visual elements. |
 
-## What It Evaluates
+## Evaluation Dimensions
 
-Subject clarity is not a single property. It emerges from three distinct perceptual qualities, each evaluated by a dedicated sub-function:
+The final score is a weighted combination of three independent sub-evaluations, each targeting a specific dimension of subject clarity.
 
-### 1. Focus Dominance — [cat-focus-dominance](https://github.com/ObjectiveAI-claude-code-1/cat-focus-dominance)
+### 1. Focus Clarity — [{{ .Task0 }}](https://github.com/{{ .Owner }}/{{ .Task0 }})
 
-Scores whether the cat is the sharpest and most crisply rendered element in the image relative to its surroundings. A cat in clear focus against a softer background draws the eye naturally. A cat that is blurry, soft, or no sharper than everything else loses its focal authority.
+Evaluates how sharply and crisply the cat is rendered *relative to the rest of the image*. This is a measure of relative focus, not absolute resolution. A photograph from a modest camera can score highly if the cat is the sharpest thing in the frame; a high-resolution image can score poorly if the cat is out of focus while the background is tack-sharp.
 
-This evaluation measures *relative* focus, not absolute sharpness. A slightly soft image where the cat still holds the focal advantage scores higher than a uniformly sharp image where the cat enjoys no such advantage. What matters is whether the optics of the photograph direct the viewer's attention toward the cat.
+**What it looks for:**
+- The texture of the cat's fur, facial details, and body edges rendered with more precision than surrounding elements
+- The cat functioning as the perceptual anchor — the element the lens chose to render most clearly
+- Whether the cat emerges from the image through sharpness, or recedes into it through blur
 
-### 2. Subject Prominence — [cat-compositional-prominence](https://github.com/ObjectiveAI-claude-code-1/cat-compositional-prominence)
+### 2. Subject Prominence — [{{ .Task1 }}](https://github.com/{{ .Owner }}/{{ .Task1 }})
 
-Scores whether the cat occupies enough of the frame, with sufficient size and intentional placement, to register immediately as the subject. A cat that fills a commanding portion of the frame reads as the reason the photograph was taken. A cat that is tiny, marginal, or dwarfed by its environment reads as incidental.
+Evaluates how much visual real estate and commanding presence the cat holds within the frame. The cat should feel like the reason the photograph was taken.
 
-This evaluation considers the cat's size relative to the frame, its compositional placement, and whether the spatial relationship between the cat and the borders of the image communicates intentionality.
+**What it looks for:**
+- The cat's size relative to the overall frame — generous and substantial, or tiny and dwarfed
+- Positioning with intention — centered or placed where the eye naturally falls, versus tucked into a corner
+- Visual weight relative to context — a cat against a simple background can feel prominent at smaller sizes, while a cat in a busy environment needs greater size to avoid being swallowed by visual noise
 
-### 3. Visual Separation — [cat-visual-separation](https://github.com/ObjectiveAI-claude-code-1/cat-visual-separation)
+### 3. Visual Separation — [{{ .Task2 }}](https://github.com/{{ .Owner }}/{{ .Task2 }})
 
-Scores whether the cat is visually distinct from the background and free from competing elements. A gray cat on a gray couch becomes texture. A tabby on a patterned rug becomes camouflage. A black cat in a dark room becomes a shadow. This evaluation measures how well the cat stands apart through contrast in color, tone, texture, and spatial boundaries.
+Evaluates how distinctly the cat stands apart from its surroundings and from competing visual elements. This operates on two levels:
 
-It also accounts for visual clutter — other animals, people, bright objects, or bold patterns that pull the viewer's gaze away from the cat. The cat should not have to compete for attention.
+**Level 1 — Separation from background:**
+- Does the cat contrast with its environment through color, brightness, or texture?
+- Or does it blend, camouflage, or merge — like a black cat on a black couch, or a white cat against snow?
+
+**Level 2 — Separation from competing elements:**
+- Are there other animals, people, bold objects, or dramatic scenery pulling the viewer's eye away?
+- Is the cat the singular focal point, or must it share attention?
 
 ## Use Cases
 
-- **Adoption platforms** — Ensure uploaded cat photos clearly show the animal so prospective adopters can see what the cat looks like.
-- **Breed identification** — Gate photographs before passing them to breed classifiers, filtering out images where the cat is too obscured to classify reliably.
-- **Content quality** — Score cat photos on social platforms to surface images where the cat is the clear subject, improving feed and recommendation quality.
-- **Veterinary records** — Validate that submitted photos are usable for visual health assessments by confirming the cat is clearly visible.
-- **Downstream quality gate** — Use as a pre-filter before any image analysis pipeline that depends on the cat being clearly present and identifiable in the frame.
+- **Cat photography platforms** — Surface the most compelling images where the cat is genuinely the star, ensuring community feeds showcase cats rather than incidental background appearances.
+- **Machine learning dataset curation** — Filter training data to retain only images where the cat is unambiguously the subject, improving model quality by excluding noisy, unclear, or cat-as-afterthought images.
+- **Personal photo selection** — Help users find the best, clearest portraits of their cat from a library of thousands — not blurry accidents or shots where only a tail is visible at the edge of the frame.
+- **Editorial and commercial use** — Assist publishers, brands, and animal shelters in selecting images where the cat commands attention instantly — critical when the viewer's attention is fleeting and the photograph has only a moment to make its case.
 
 ## Philosophy
 
-This function measures *visual presence* — not photographic beauty, artistic merit, or technical perfection. A photograph with strong subject clarity produces instant, effortless recognition: *that is a cat*. A photograph with weak subject clarity introduces hesitation, confusion, or the need to search. The evaluation is perceptual, not technical. It describes what the human eye experiences in the first fraction of a second of looking, before conscious analysis begins.
+Technical resolution and sharpness are secondary to perceptual clarity. A slightly soft image where the cat is still clearly the dominant visual element should score higher than a razor-sharp image where the cat is lost among distractions. This function is not a measure of camera quality or photographic technique — it is a measure of whether, at first glance, the cat is the undeniable subject of the photograph.
 
-A cat with strong subject clarity does not ask to be noticed. It insists.
+*The cat should never have to compete for its own photograph.*
