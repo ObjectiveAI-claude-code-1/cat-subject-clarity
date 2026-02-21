@@ -1,16 +1,11 @@
 {
   "type": "scalar.function",
-  "input_schema": {
-    "type": "image",
-    "description": "A cat photograph to evaluate for subject clarity — whether the cat is in focus, visually distinct, and immediately recognizable as the center of the image."
-  },
   "tasks": [
     {
-      "type": "placeholder.scalar.function",
-      "input_schema": {
-        "type": "image",
-        "description": "A cat photograph to evaluate for focus distinction — whether the cat is rendered more sharply than its surroundings."
-      },
+      "type": "scalar.function",
+      "owner": "ObjectiveAI-claude-code-1",
+      "repository": "cat-focus-distinction",
+      "commit": "b84770b4ebbc828bdc53e301f465c9e998bfb01b",
       "skip": null,
       "input": {
         "$jmespath": "input"
@@ -20,11 +15,10 @@
       }
     },
     {
-      "type": "placeholder.scalar.function",
-      "input_schema": {
-        "type": "image",
-        "description": "A cat photograph to evaluate for subject prominence — how much visual weight the cat carries within the frame through its scale and placement."
-      },
+      "type": "scalar.function",
+      "owner": "ObjectiveAI-claude-code-1",
+      "repository": "cat-subject-prominence",
+      "commit": "c51a6391a85d9a9eae12b474255cfd3b812a808b",
       "skip": null,
       "input": {
         "$jmespath": "input"
@@ -34,11 +28,10 @@
       }
     },
     {
-      "type": "placeholder.scalar.function",
-      "input_schema": {
-        "type": "image",
-        "description": "A cat photograph to evaluate for visual isolation — how cleanly the cat separates from its background and from competing visual elements."
-      },
+      "type": "scalar.function",
+      "owner": "ObjectiveAI-claude-code-1",
+      "repository": "cat-visual-isolation",
+      "commit": "bb9ddb1601763b7b035862808dbf82a7589d2c06",
       "skip": null,
       "input": {
         "$jmespath": "input"
@@ -48,5 +41,9 @@
       }
     }
   ],
-  "description": "Scores how clearly a cat registers as the subject of a photograph. Evaluates three dimensions — focus distinction, subject prominence, and visual isolation — to measure whether the cat is immediately and undeniably the center of the image without requiring the viewer to search for it."
+  "description": "Scores how clearly a cat registers as the subject of a photograph. Evaluates three dimensions — focus distinction, subject prominence, and visual isolation — to measure whether the cat is immediately and undeniably the center of the image without requiring the viewer to search for it.",
+  "input_schema": {
+    "type": "image",
+    "description": "A cat photograph to evaluate for subject clarity — whether the cat is in focus, visually distinct, and immediately recognizable as the center of the image."
+  }
 }

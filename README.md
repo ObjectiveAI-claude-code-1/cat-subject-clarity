@@ -24,15 +24,15 @@ A scalar score between 0 and 1.
 
 The function decomposes subject clarity into three independently scored dimensions. Each sub-function receives the same cat photograph and evaluates a specific quality. The parent score is the weighted combination of all three.
 
-### 1. Focus Distinction — [{{ .Task0 }}](https://github.com/{{ .Owner }}/{{ .Task0 }})
+### 1. Focus Distinction — [cat-focus-distinction](https://github.com/ObjectiveAI-claude-code-1/cat-focus-distinction)
 
 Evaluates how sharply the cat is rendered *relative to everything else* in the image. What matters is the gap in clarity between the cat and its surroundings — not absolute technical sharpness. A cat that is the crispest element in the frame while the background falls into softness scores highly. A cat that is equally sharp as its environment, or softer than its surroundings, scores poorly. The human eye is wired to seek out the sharpest element in a scene; this dimension measures whether the photograph leverages that instinct in the cat's favor.
 
-### 2. Subject Prominence — [{{ .Task1 }}](https://github.com/{{ .Owner }}/{{ .Task1 }})
+### 2. Subject Prominence — [cat-subject-prominence](https://github.com/ObjectiveAI-claude-code-1/cat-subject-prominence)
 
 Evaluates how much visual weight the cat carries within the frame — its scale, placement, and the proportion of the composition it occupies. A close-up portrait where the cat fills the frame has maximum prominence. A wide landscape where the cat is a distant speck has almost none. Prominence is primarily about size and position, but a modestly sized cat at the natural focal point of the composition can still score well. The question is whether the cat registers as the subject at a glance or whether the frame overwhelms it.
 
-### 3. Visual Isolation — [{{ .Task2 }}](https://github.com/{{ .Owner }}/{{ .Task2 }})
+### 3. Visual Isolation — [cat-visual-isolation](https://github.com/ObjectiveAI-claude-code-1/cat-visual-isolation)
 
 Evaluates how cleanly the cat separates from its surroundings across two dimensions. First, *background separation*: does the cat's color, texture, and form contrast against what is behind it, or does it camouflage into a similarly colored background? Second, *freedom from competition*: are there other visually demanding elements — other animals, people, bold patterns, bright objects — pulling the viewer's eye away? A cat alone on a contrasting surface scores highly. A cat buried in visual clutter scores poorly.
 
