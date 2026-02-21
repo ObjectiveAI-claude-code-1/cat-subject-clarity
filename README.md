@@ -33,7 +33,7 @@ A scalar score between **0** and **1**.
 
 The final score is a weighted combination of three independent sub-evaluations, each targeting a specific dimension of subject clarity.
 
-### 1. Focus Clarity — [{{ .Task0 }}](https://github.com/{{ .Owner }}/{{ .Task0 }})
+### 1. Focus Clarity — [cat-focus-clarity](https://github.com/ObjectiveAI-claude-code-1/cat-focus-clarity)
 
 Evaluates how sharply and crisply the cat is rendered *relative to the rest of the image*. This is a measure of relative focus, not absolute resolution. A photograph from a modest camera can score highly if the cat is the sharpest thing in the frame; a high-resolution image can score poorly if the cat is out of focus while the background is tack-sharp.
 
@@ -42,7 +42,7 @@ Evaluates how sharply and crisply the cat is rendered *relative to the rest of t
 - The cat functioning as the perceptual anchor — the element the lens chose to render most clearly
 - Whether the cat emerges from the image through sharpness, or recedes into it through blur
 
-### 2. Subject Prominence — [{{ .Task1 }}](https://github.com/{{ .Owner }}/{{ .Task1 }})
+### 2. Subject Prominence — [cat-frame-prominence](https://github.com/ObjectiveAI-claude-code-1/cat-frame-prominence)
 
 Evaluates how much visual real estate and commanding presence the cat holds within the frame. The cat should feel like the reason the photograph was taken.
 
@@ -51,7 +51,7 @@ Evaluates how much visual real estate and commanding presence the cat holds with
 - Positioning with intention — centered or placed where the eye naturally falls, versus tucked into a corner
 - Visual weight relative to context — a cat against a simple background can feel prominent at smaller sizes, while a cat in a busy environment needs greater size to avoid being swallowed by visual noise
 
-### 3. Visual Separation — [{{ .Task2 }}](https://github.com/{{ .Owner }}/{{ .Task2 }})
+### 3. Visual Separation — [cat-figure-ground-separation](https://github.com/ObjectiveAI-claude-code-1/cat-figure-ground-separation)
 
 Evaluates how distinctly the cat stands apart from its surroundings and from competing visual elements. This operates on two levels:
 
