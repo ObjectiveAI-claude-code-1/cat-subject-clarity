@@ -1,0 +1,52 @@
+{
+  "type": "scalar.function",
+  "input_schema": {
+    "type": "image",
+    "description": "A cat photograph to evaluate for subject clarity — whether the cat is in focus, visually distinct, and immediately recognizable as the center of the image."
+  },
+  "tasks": [
+    {
+      "type": "placeholder.scalar.function",
+      "input_schema": {
+        "type": "image",
+        "description": "A cat photograph to evaluate for focus distinction — whether the cat is rendered more sharply than its surroundings."
+      },
+      "skip": null,
+      "input": {
+        "$jmespath": "input"
+      },
+      "output": {
+        "$jmespath": "output"
+      }
+    },
+    {
+      "type": "placeholder.scalar.function",
+      "input_schema": {
+        "type": "image",
+        "description": "A cat photograph to evaluate for subject prominence — how much visual weight the cat carries within the frame through its scale and placement."
+      },
+      "skip": null,
+      "input": {
+        "$jmespath": "input"
+      },
+      "output": {
+        "$jmespath": "output"
+      }
+    },
+    {
+      "type": "placeholder.scalar.function",
+      "input_schema": {
+        "type": "image",
+        "description": "A cat photograph to evaluate for visual isolation — how cleanly the cat separates from its background and from competing visual elements."
+      },
+      "skip": null,
+      "input": {
+        "$jmespath": "input"
+      },
+      "output": {
+        "$jmespath": "output"
+      }
+    }
+  ],
+  "description": "Scores how clearly a cat registers as the subject of a photograph. Evaluates three dimensions — focus distinction, subject prominence, and visual isolation — to measure whether the cat is immediately and undeniably the center of the image without requiring the viewer to search for it."
+}
